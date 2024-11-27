@@ -10,7 +10,7 @@ namespace ClassLib
         {
             _students = new List<Student>()
             {
-                new Student { Id = 1, Name = "Mieke", Succeeded = true },
+                new Student { Id = 1, Name = "Staging", Succeeded = true },
                 new Student { Id = 2, Name = "Mike" },
                 new Student { Id = 3, Name = "Kevin", Succeeded = false}
             };
