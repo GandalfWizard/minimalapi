@@ -1,9 +1,19 @@
-name: CI/CD Production
+name: CI/CD Staging
 
 on:
   push:
     branches:
-      - production
+      - staging
+  workflow_dispatch:
+    inputs:
+      resource-group:
+        description: 'Azure Resource Group'
+        default: 'deWolf-rg-development-westeurope-01'
+        required: true
+      webapp-name:
+        description: 'Azure Web App Name'
+        default: 'dewolf-remco-minimal-api'
+        required: true
 
 jobs:
   build:
@@ -18,10 +28,10 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore ./examples-aspnet-minimalapi/examples-aspnet-minimalapi.sln
 
       - name: Build and publish
-        run: dotnet publish -c Release -o output
+        run: dotnet publish ./examples-aspnet-minimalapi/examples-aspnet-minimalapi.sln -c Release -o output
 
       - name: Create ZIP
         run: zip -r app.zip output
@@ -50,6 +60,6 @@ jobs:
 
       - name: Deploy to Azure
         run: |
-          az webapp deploy  --resource-group deWolf-rg-production-westeurope-01 \
+          az webapp deploy --resource-group deWolf-rg-production-westeurope-01 \
                           --name dewolf-remco-minimal-api \
                           --src-path app.zip
