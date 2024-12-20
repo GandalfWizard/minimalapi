@@ -18,10 +18,10 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore ./examples-aspnet-minimalapi/examples-aspnet-minimalapi.sln
 
       - name: Build and publish
-        run: dotnet publish -c Release -o output
+        run: dotnet publish ./examples-aspnet-minimalapi/examples-aspnet-minimalapi.sln -c Release -o output
 
       - name: Create ZIP
         run: zip -r app.zip output
