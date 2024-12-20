@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sn4N2XGrlDY=",
+  "dgSpecHash": "XP+XzKbYIK8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\coding\\Desktop\\examples-aspnet-minimalapi\\examples-aspnet-minimalapi\\ClassLib\\ClassLib.csproj",
+  "projectFilePath": "C:\\Users\\coding\\minimalapi\\examples-aspnet-minimalapi\\ClassLib\\ClassLib.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
