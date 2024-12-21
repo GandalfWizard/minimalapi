@@ -1,0 +1,3 @@
+C:\Users\coding\minimalapi\output\ClassLib.dll
+C:\Users\coding\minimalapi\output\ClassLib.deps.json
+C:\Users\coding\minimalapi\output\ClassLib.pdb

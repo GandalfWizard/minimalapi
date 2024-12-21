@@ -1,0 +1,14 @@
+C:\Users\coding\minimalapi\output\MinimalAPI.exe
+C:\Users\coding\minimalapi\output\appsettings.Development.json
+C:\Users\coding\minimalapi\output\appsettings.json
+C:\Users\coding\minimalapi\output\MinimalAPI.dll
+C:\Users\coding\minimalapi\output\MinimalAPI.deps.json
+C:\Users\coding\minimalapi\output\MinimalAPI.runtimeconfig.json
+C:\Users\coding\minimalapi\output\MinimalAPI.pdb
+C:\Users\coding\minimalapi\output\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\coding\minimalapi\output\Microsoft.OpenApi.dll
+C:\Users\coding\minimalapi\output\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\coding\minimalapi\output\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\coding\minimalapi\output\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\coding\minimalapi\output\ClassLib.dll
+C:\Users\coding\minimalapi\output\ClassLib.pdb
