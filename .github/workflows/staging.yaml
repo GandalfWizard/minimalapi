@@ -1,6 +1,5 @@
 name: CI/CD Staging
 
-
 on:
   push:
     branches:
@@ -29,7 +28,10 @@ jobs:
         run: dotnet publish ./examples-aspnet-minimalapi/examples-aspnet-minimalapi.sln -c Release -o output
 
       - name: Create ZIP
-        run: zip -r app.zip output
+        run: |
+          cd output
+          zip -r ../app.zip .
+        shell: bash
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -54,8 +56,15 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
       - name: Deploy to Azure
         run: |
           az webapp deploy --resource-group deWolf-rg-development-westeurope-01 \
                           --name deWolf-webapp-development-01 \
                           --src-path app.zip
+
+      - name: Set Startup Command
+        run: |
+          az webapp config set --resource-group deWolf-rg-development-westeurope-01 \
+                               --name deWolf-webapp-development-01 \
+                               --startup-file "dotnet MinimalAPI.dll"
