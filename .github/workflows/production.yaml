@@ -1,15 +1,14 @@
-name: CI/CD Staging
-
+name: CI/CD Production
 
 on:
   push:
     branches:
-      - staging
+      - production
   workflow_dispatch:
     inputs:
       resource-group:
         description: 'Azure Resource Group'
-        default: 'deWolf-rg-development-westeurope-01'
+        default: 'deWolf-rg-production-westeurope-01'
         required: true
       webapp-name:
         description: 'Azure Web App Name'
@@ -18,17 +17,17 @@ on:
 
 permissions:
   id-token: write
-  contents: read
+  contents: read 
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up .NET
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
 
@@ -42,7 +41,7 @@ jobs:
         run: zip -r app.zip output
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: app-zip
           path: app.zip
@@ -52,19 +51,21 @@ jobs:
     needs: build
     steps:
       - name: Download artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: app-zip
 
       - name: Authenticate with Azure
         uses: azure/login@v1
         with:
+          auth-type: 'service-principal'
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       - name: Deploy to Azure
         run: |
           az webapp deploy --resource-group deWolf-rg-production-westeurope-01 \
-                          --name dewolf-remco-minimal-api \
+                          --name deWolf-webapp-production-01 \
                           --src-path app.zip
