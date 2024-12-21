@@ -12,7 +12,7 @@ on:
         required: true
       webapp-name:
         description: 'Azure Web App Name'
-        default: 'dewolf-remco-minimal-api'
+        default: 'deWolf-webapp-production-01'
         required: true
 
 permissions:
@@ -35,10 +35,13 @@ jobs:
         run: dotnet restore
 
       - name: Build and publish
-        run: dotnet publish -c Release
+        run: dotnet publish MinimalAPI/MinimalAPI.csproj -c Release -o output
 
       - name: Create ZIP
-        run: zip -r app.zip output
+        run: |
+          cd output
+          zip -r ../app.zip .
+        shell: bash
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -69,3 +72,9 @@ jobs:
           az webapp deploy --resource-group deWolf-rg-production-westeurope-01 \
                           --name deWolf-webapp-production-01 \
                           --src-path app.zip
+
+      - name: Set Startup Command
+        run: |
+          az webapp config set --resource-group deWolf-rg-production-westeurope-01 \
+                               --name deWolf-webapp-production-01 \
+                               --startup-file "dotnet MinimalAPI.dll"
