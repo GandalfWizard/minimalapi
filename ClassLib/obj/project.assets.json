@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\coding\\minimalapi\\examples-aspnet-minimalapi\\ClassLib\\ClassLib.csproj",
+      "projectUniqueName": "C:\\Users\\coding\\minimalapi\\ClassLib\\ClassLib.csproj",
       "projectName": "ClassLib",
-      "projectPath": "C:\\Users\\coding\\minimalapi\\examples-aspnet-minimalapi\\ClassLib\\ClassLib.csproj",
+      "projectPath": "C:\\Users\\coding\\minimalapi\\ClassLib\\ClassLib.csproj",
       "packagesPath": "C:\\Users\\coding\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\coding\\minimalapi\\examples-aspnet-minimalapi\\ClassLib\\obj\\",
+      "outputPath": "C:\\Users\\coding\\minimalapi\\ClassLib\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\coding\\AppData\\Roaming\\NuGet\\NuGet.Config",

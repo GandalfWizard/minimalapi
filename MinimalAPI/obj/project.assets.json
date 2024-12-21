@@ -481,11 +481,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\coding\\minimalapi\\examples-aspnet-minimalapi\\MinimalAPI\\MinimalAPI.csproj",
+      "projectUniqueName": "C:\\Users\\coding\\minimalapi\\MinimalAPI\\MinimalAPI.csproj",
       "projectName": "MinimalAPI",
-      "projectPath": "C:\\Users\\coding\\minimalapi\\examples-aspnet-minimalapi\\MinimalAPI\\MinimalAPI.csproj",
+      "projectPath": "C:\\Users\\coding\\minimalapi\\MinimalAPI\\MinimalAPI.csproj",
       "packagesPath": "C:\\Users\\coding\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\coding\\minimalapi\\examples-aspnet-minimalapi\\MinimalAPI\\obj\\",
+      "outputPath": "C:\\Users\\coding\\minimalapi\\MinimalAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\coding\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -502,8 +502,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\coding\\minimalapi\\examples-aspnet-minimalapi\\ClassLib\\ClassLib.csproj": {
-              "projectPath": "C:\\Users\\coding\\minimalapi\\examples-aspnet-minimalapi\\ClassLib\\ClassLib.csproj"
+            "C:\\Users\\coding\\minimalapi\\ClassLib\\ClassLib.csproj": {
+              "projectPath": "C:\\Users\\coding\\minimalapi\\ClassLib\\ClassLib.csproj"
             }
           }
         }
