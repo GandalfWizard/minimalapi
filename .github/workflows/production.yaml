@@ -1,6 +1,5 @@
 name: CI/CD Staging
 
-
 on:
   push:
     branches:
@@ -42,7 +41,7 @@ jobs:
         run: zip -r app.zip output
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: app-zip
           path: app.zip
@@ -52,13 +51,14 @@ jobs:
     needs: build
     steps:
       - name: Download artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: app-zip
 
       - name: Authenticate with Azure
         uses: azure/login@v1
         with:
+        auth-type: 'oidc'
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
