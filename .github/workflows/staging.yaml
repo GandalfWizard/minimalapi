@@ -57,5 +57,5 @@ jobs:
       - name: Deploy to Azure
         run: |
           az webapp deploy --resource-group deWolf-rg-development-westeurope-01 \
-                          --name dewolf-remco-minimal-api \
+                          --name deWolf-webapp-development-01 \
                           --src-path app.zip
