@@ -1,14 +1,14 @@
-name: CI/CD Staging
+name: CI/CD Production
 
 on:
   push:
     branches:
-      - staging
+      - production
   workflow_dispatch:
     inputs:
       resource-group:
         description: 'Azure Resource Group'
-        default: 'deWolf-rg-development-westeurope-01'
+        default: 'deWolf-rg-production-westeurope-01'
         required: true
       webapp-name:
         description: 'Azure Web App Name'
@@ -24,10 +24,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up .NET
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
 
