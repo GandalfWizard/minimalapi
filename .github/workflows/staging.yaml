@@ -29,7 +29,9 @@ jobs:
         run: dotnet publish MinimalAPI/MinimalAPI.csproj -c Release -o output
 
       - name: Create ZIP
-        run: zip -r app.zip output
+        run: |
+          cd output
+          zip -r ../app.zip .
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
